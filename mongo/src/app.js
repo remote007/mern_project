@@ -88,8 +88,15 @@ try{
 // updateDocs("6222e10d28ce9729324b26d9");
 
 
-
-
+const deleteDocs = async (_id) => {
+    try{
+        const r9 = await Playlist.deleteOne({_id});
+        console.log(r9);
+    }catch(err){
+        console.log(err);
+    }
+}
+deleteDocs("6222dd0577c720082d17dc1b");
 
 
 
