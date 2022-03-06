@@ -15,7 +15,7 @@ const Playlist = new mongoose.model("Playlist",playlistSchema);
 const createDoc = async() =>{
     try{
         const studentPlaylist = new Playlist({
-            name : "la",
+            name : "ttT",
             student : true
         })
         
@@ -27,7 +27,7 @@ const createDoc = async() =>{
     }
 }
 
-createDoc();
+// createDoc();
 
 //for many
 
