@@ -90,13 +90,14 @@ try{
 
 const deleteDocs = async (_id) => {
     try{
-        const r9 = await Playlist.deleteOne({_id});
+        // const r9 = await Playlist.deleteOne({_id});
+        const r9 = await Playlist.findByIdAndDelete({_id});
         console.log(r9);
     }catch(err){
         console.log(err);
     }
 }
-deleteDocs("6222dd0577c720082d17dc1b");
+deleteDocs("6222e12edcbddd65f433b90c");
 
 
 
