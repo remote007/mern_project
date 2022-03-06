@@ -4,7 +4,7 @@ mongoose.connect("mongodb://localhost:27017/nodemgoDB",{useNewUrlParser:true,use
 .catch((err) => console.log(err));
 
 const playlistSchema = new mongoose.Schema({
-    name : {type:String,required:true,trim:true,lowercase:true,unique:true},
+    name : {type:String,required:true,trim:true,lowercase:true,unique:true,minlength:[3,"Minimum 3 letters required"]},
     student : Boolean
 })
 
@@ -15,7 +15,7 @@ const Playlist = new mongoose.model("Playlist",playlistSchema);
 const createDoc = async() =>{
     try{
         const studentPlaylist = new Playlist({
-            name : "        Karta   JS                  ",
+            name : "la",
             student : true
         })
         
@@ -27,7 +27,7 @@ const createDoc = async() =>{
     }
 }
 
-// createDoc();
+createDoc();
 
 //for many
 
