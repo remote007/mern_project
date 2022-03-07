@@ -29,3 +29,7 @@ const studentSchema = new mongoose.Schema({
         required:true
     }
 });
+
+// new collection (table using model)
+const Student = new mongoose.Model('Student',studentSchema);
+module.exports = Student;
