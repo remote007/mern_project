@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
   },
   "keywords": [],
   "author": "Padmini Rai",
@@ -11,6 +13,7 @@
   "dependencies": {
     "express": "^4.17.3",
     "mongoose": "^6.2.4",
+    "nodemon": "^2.0.15",
     "validator": "^13.7.0"
   },
   "devDependencies": {},
