@@ -31,5 +31,5 @@ const studentSchema = new mongoose.Schema({
 });
 
 // new collection (table using model)
-const Student = new mongoose.Model('Student',studentSchema);
+const Student = new mongoose.model('Student',studentSchema);
 module.exports = Student;
