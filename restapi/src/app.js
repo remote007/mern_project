@@ -34,9 +34,9 @@ app.post("/student",async(req,res)=>{
 app.get("/students", async(req,res)=>{
 
     try{
-        const studentData = await Student.find();
-        console.log(studentData);
-        res.status(201).send(studentData);
+        const studentsData = await Student.find();
+        console.log(studentsData);
+        res.status(201).send(studentsData);
 
     }catch(err){
         res.status(400).send(err);
@@ -44,7 +44,15 @@ app.get("/students", async(req,res)=>{
 
 })
 // get by student individual id 
+app.get("/student/:id",async(req,res)=>{
+    try{
+        const studentData = await Student.findById(req.params.id);
+        res.status(201).send(studentData);
+    }catch(err){
+        res.status(400).send(err);
+    }
 
+})
 
 
 // should always be at the bottom of application 
