@@ -58,9 +58,29 @@ app.get("/student/:id",async(req,res)=>{
     }
 
 })
+//delete the document or row
+
+app.delete("/student/:id",async(req,res) => {
+
+    try{
+        const _id = req.params.id;
+        const deletedUser = await Student.findByIdAndDelete({"_id":_id});
+        if(!deletedUser){
+            res.status(400).send("Id Not Found");
+        }else{
+            res.status(201).send(deletedUser);
+        }
+        
+    }catch(err){
+        res.status(400).send(err);
+    }
+
+})
+// update student with put and patch
 
 
-// should always be at the bottom of application 
+
+// listening to the server should always be at the bottom of application 
 app.listen(port , ()=>{
      console.log(`Connection Established at ${port}`);
 });
