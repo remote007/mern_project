@@ -60,7 +60,7 @@ app.get("/student/:id",async(req,res)=>{
 })
 //delete the document or row
 
-app.delete("/student/:id",async(req,res) => {
+app.delete("/student/:_id",async(req,res) => {
 
     try{
         const _id = req.params.id;
@@ -77,7 +77,17 @@ app.delete("/student/:id",async(req,res) => {
 
 })
 // update student with put and patch
+app.patch("/student/:_id",async(req,res)=>{
+    try{
 
+
+        
+    }catch(err){
+        res.status(400).send(err);
+    }
+
+
+})
 
 
 // listening to the server should always be at the bottom of application 
