@@ -31,7 +31,7 @@ app.post("/student",async(req,res)=>{
 
 })
 
-app.get("students/", async(req,res)=>{
+app.get("/students", async(req,res)=>{
 
     try{
         const studentData = await Student.find();
