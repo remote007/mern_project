@@ -8,16 +8,29 @@ app.use(express.json())
 // app.get("/",(req,res) => {
 //     res.send("Hello! from the other side by me , I'm healthy");
 // })
-app.post("/student",(req,res)=>{
-    console.log(req.body);
-    const user = new Student(req.body);
-    user.save().then(()=>{
-        res.status(201).send(user);
-    }).catch((err)=>{
+// Promise is caught
+// app.post("/student",(req,res)=>{
+//     console.log(req.body);
+//     const user = new Student(req.body);
+//     user.save().then(()=>{
+//         res.status(201).send(user);
+//     }).catch((err)=>{
+//         res.status(400).send(err);
+//     });
+//     // res.send("Hello! from the other side");
+// })
+// Async Await to get result of promise and avoid then and catch , here error handling is done through try and catch
+app.post("/student",async(req,res)=>{
+    try{
+        const user = new Student(req.body);
+        const createUser = await user.save();
+        res.status(201).send(createUser);
+    }catch(err){
         res.status(400).send(err);
-    });
-    // res.send("Hello! from the other side");
+    }
+
 })
+
 app.listen(port , ()=>{
      console.log(`Connection Established at ${port}`);
 });
