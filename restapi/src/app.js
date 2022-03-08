@@ -60,7 +60,7 @@ app.get("/student/:id",async(req,res)=>{
 })
 //delete the document or row
 
-app.delete("/student/:_id",async(req,res) => {
+app.delete("/student/:id",async(req,res) => {
 
     try{
         const _id = req.params.id;
@@ -77,11 +77,17 @@ app.delete("/student/:_id",async(req,res) => {
 
 })
 // update student with put and patch
-app.patch("/student/:_id",async(req,res)=>{
+app.patch("/student/:id",async(req,res)=>{
     try{
+        const _id = req.params.id;
+        const updatedUser = await Student.findByIdAndUpdate({"_id":_id},req.body,{new:true});
+        if(!updatedUser){
+            res.status(400).send("Invalid Id");
+        }else{
 
+            res.status(201).send(updatedUser);
+        }
 
-        
     }catch(err){
         res.status(400).send(err);
     }
