@@ -10,7 +10,13 @@ app.use(express.json())
 // })
 app.post("/student",(req,res)=>{
     console.log(req.body);
-    res.send("Hello! from the other side");
+    const user = new Student(req.body);
+    user.save().then(()=>{
+        res.status(201).send(user);
+    }).catch((err)=>{
+        res.status(400).send(err);
+    });
+    // res.send("Hello! from the other side");
 })
 app.listen(port , ()=>{
      console.log(`Connection Established at ${port}`);

@@ -12,7 +12,7 @@ const studentSchema = new mongoose.Schema({
         required:true,
         unique:[true,"Email already present !"],
         validate(value){
-            if(!isEmail(value))
+            if(!validator.isEmail(value))
                 throw new Error("Not a valid email");
         }
 
@@ -22,10 +22,10 @@ const studentSchema = new mongoose.Schema({
         unique:true,
         required:true,
         minlength:10,
-        maxlength:10
+        
     },
     address:{
-        type:String,
+        type: String,
         required:true
     }
 });
