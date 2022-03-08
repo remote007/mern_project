@@ -43,6 +43,9 @@ app.get("/students", async(req,res)=>{
     }
 
 })
+// get by student individual id 
+
+
 
 // should always be at the bottom of application 
 app.listen(port , ()=>{
