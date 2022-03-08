@@ -47,7 +47,12 @@ app.get("/students", async(req,res)=>{
 app.get("/student/:id",async(req,res)=>{
     try{
         const studentData = await Student.findById(req.params.id);
-        res.status(201).send(studentData);
+        if(!studentData){
+            res.status(400).send("Incorrect Data");
+        }else{
+            res.status(201).send(studentData);
+        }
+        
     }catch(err){
         res.status(400).send(err);
     }
