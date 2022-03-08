@@ -31,6 +31,20 @@ app.post("/student",async(req,res)=>{
 
 })
 
+app.get("students/", async(req,res)=>{
+
+    try{
+        const studentData = await Student.find();
+        console.log(studentData);
+        res.status(201).send(studentData);
+
+    }catch(err){
+        res.status(400).send(err);
+    }
+
+})
+
+// should always be at the bottom of application 
 app.listen(port , ()=>{
      console.log(`Connection Established at ${port}`);
 });
