@@ -13,5 +13,5 @@ app.get("/hi",async(req,res) => {
 
 // listen application 
 app.listen(port,()=>{
-    console.log(`Connection established successfully at port ${port}`);
+    console.log(`Server connection established successfully at port ${port}`);
 })
