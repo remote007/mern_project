@@ -21,6 +21,22 @@ const menSchema = new mongoose.Schema({
         type:String,
         required:true,
         trim:true
+    },
+    score:{
+        type:Number,
+        required:true,
+        trim:true
+    },
+    event:{
+        type:String,
+        default:"100m"
     }
 
 });
+
+const MensRanking = new mongoose.model("MensRanking",menSchema);
+
+
+
+
+module.exports = menSchema;
