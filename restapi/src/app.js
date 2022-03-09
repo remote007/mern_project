@@ -22,8 +22,9 @@ app.use(express.json())
 //     // res.send("Hello! from the other side");
 // })
 // Async Await to get result of promise and avoid then and catch , here error handling is done through try and catch
-// app.post("/student",async(req,res)=>{
+// app.post("/students",async(req,res)=>{
 //     try{
+        
 //         const user = new Student(req.body);
 //         const createUser = await user.save();
 //         res.status(201).send(createUser);

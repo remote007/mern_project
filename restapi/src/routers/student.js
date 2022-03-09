@@ -1,11 +1,15 @@
 const express = require("express");
 const Student = require("../models/students");
 const router = new express.Router();
-
+router.use(express.json())
+// app.use(express.json())
 
 router.post("/students",async(req,res)=>{
+    
     try{
-        const user = new Student(req.body);
+        console.log("Hi Post")
+        console.log(req.body);
+        const user = new Student(req.body);console.log(user);
         const createUser = await user.save();
         res.status(201).send(createUser);
     }catch(err){
