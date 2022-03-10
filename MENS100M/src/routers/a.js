@@ -43,5 +43,18 @@ router.get("/mens/:id",async(req,res)=>{
 
 })
 
+router.delete("/mens/:id",async(req,res)=>{
+
+try{
+    const man = MensRanking.findByIdAndDelete({"_id":req.params.id}); 
+    if(!man)
+    res.status(400).send("iNVALID iD");
+    else
+        res.status(201).send(man);
+}catch(err){
+    res.status(400).send(err);
+}
+
+})
 
 module.exports = router
