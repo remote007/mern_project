@@ -1,0 +1,1 @@
+// this file connects database to the server and models create model (table) for row
