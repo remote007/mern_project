@@ -46,7 +46,8 @@ router.get("/mens/:id",async(req,res)=>{
 router.delete("/mens/:id",async(req,res)=>{
 
 try{
-    const man = MensRanking.findByIdAndDelete({"_id":req.params.id}); 
+    // don't forget to use await
+    const man = await MensRanking.findByIdAndDelete({"_id":req.params.id}); 
     if(!man)
     res.status(400).send("iNVALID iD");
     else
@@ -54,6 +55,10 @@ try{
 }catch(err){
     res.status(400).send(err);
 }
+
+})
+
+router.patch("/mens/:id",async(req,res)=>{
 
 })
 
