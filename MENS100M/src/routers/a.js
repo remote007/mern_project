@@ -22,9 +22,10 @@ router.post("/mens",async(req,res)=>{
 
 router.get("/mens",(req,res)=>{
     try{
-
+        const man = new MensRanking().find();
+        res.status(201).send(man);
     }catch(err){
-        req.status(400).send();
+        req.status(400).send(err);
     }
 })
 
