@@ -5,7 +5,8 @@ const app = express();
 // process is from node
 const port = process.env.PORT || 3000;
 const path = require("path");
-const static_path = path.join;
+// gives complete directory path from the drive
+const static_path = path.join(__dirname);
 require("./db/conn")
 app.use(express.static())
 
