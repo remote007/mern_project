@@ -1,6 +1,7 @@
 const express = require("express")
 // a constant app get all powers  or properties of express function
 const app = express();
+// process is from node
 const port = process.env.PORT || 3000;
 //  `/`hi is the root and req and res are objects 
 app.get("/hi",async(req,res)=>{
