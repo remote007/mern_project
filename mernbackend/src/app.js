@@ -1,3 +1,4 @@
+// Express application
 const express = require("express")
 // a constant app get all powers  or properties of express function
 const app = express();
