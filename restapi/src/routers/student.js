@@ -2,7 +2,6 @@ const express = require("express");
 const Student = require("../models/students");
 const router = new express.Router();
 router.use(express.json())
-// app.use(express.json())
 
 router.post("/students",async(req,res)=>{
     
