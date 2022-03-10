@@ -1,12 +1,17 @@
 const express = require("express");
-const Student = require("../models/mens");
+// model variable initialise with file inside models
+const MensRanking = require("../models/mens");
 const router = new express.Router();
 router.use(express.json())
 
 router.post("/mens",async(req,res)=>{
 
     try{
-        const newMan = new mens(req.body);
+        // console.log(req.body)
+        // new model_variable of file inside model , which is exported
+        // date is in mm-dd-yyformat by default when stored
+        const newMan = new MensRanking(req.body);
+        console.log(newMan)
         const man = await newMan.save();
         res.status(201).send(man);
 
