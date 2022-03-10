@@ -4,6 +4,9 @@ const app = express();
 // process is from node
 const port = process.env.PORT || 3000;
 //  `/`hi is the root and req and res are objects 
+require("./db/conn")
+
+
 app.get("/hi",async(req,res)=>{
     res.send("Hi , I love and then develop then master habits. I built the world I live in")
 })
