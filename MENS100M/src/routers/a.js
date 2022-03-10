@@ -29,7 +29,7 @@ router.get("/mens",async(req,res)=>{
     }
 })
 
-router.get("/men/:id",async(req,res)=>{
+router.get("/mens/:id",async(req,res)=>{
 
     try{
         const man = await MensRanking.findById({"_id":req.params.id});
@@ -42,5 +42,6 @@ router.get("/men/:id",async(req,res)=>{
     }
 
 })
+
 
 module.exports = router
