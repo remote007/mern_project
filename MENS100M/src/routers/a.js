@@ -20,19 +20,19 @@ router.post("/mens",async(req,res)=>{
     }
 })
 
-router.get("/mens",(req,res)=>{
+router.get("/mens",async(req,res)=>{
     try{
-        const man = new MensRanking().find();
+        const man = await MensRanking.find();
         res.status(201).send(man);
     }catch(err){
-        req.status(400).send(err);
+        res.status(400).send(err);
     }
 })
 
-router.get("/mens/:id",async(req,res)=>{
+router.get("/men/:id",async(req,res)=>{
 
     try{
-        const man = MensRanking.findById({"_id":req.id});
+        const man = await MensRanking.findById({"_id":req.params.id});
         if(!man)
             res.status(400).send("Invalid Id");
         else
