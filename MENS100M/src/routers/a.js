@@ -20,6 +20,14 @@ router.post("/mens",async(req,res)=>{
     }
 })
 
+router.get("/mens",(req,res)=>{
+    try{
+
+    }catch(err){
+        req.status(400).send();
+    }
+})
+
 router.get("/mens/:id",async(req,res)=>{
 
     try{
