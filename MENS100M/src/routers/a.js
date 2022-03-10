@@ -20,7 +20,17 @@ router.post("/mens",async(req,res)=>{
     }
 })
 
-router.get("/mens",async(req,res)=>{
+router.get("/mens/:id",async(req,res)=>{
+
+    try{
+        const man = MensRanking.findById({"_id":req.id});
+        if(!man)
+            res.status(400).send("Invalid Id");
+        else
+            res.status(201).send(man);
+    }catch(err){
+        res.status(400).end(err);
+    }
 
 })
 
