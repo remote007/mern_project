@@ -4,11 +4,11 @@ const express = require("express")
 const app = express();
 // process is from node
 const port = process.env.PORT || 3000;
+require("./db/conn")
 const path = require("path");
 // gives complete directory path from the drive and put "../public" , if on terminal inside src to go back as public folder is in mern project
 const static_path = path.join(__dirname,"/public");
-require("./db/conn")
-app.use(express.static())
+app.use(express.static(static_path))
 
 
 //  `/`hi is the root and req and res are objects 
