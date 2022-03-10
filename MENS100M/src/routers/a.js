@@ -20,6 +20,8 @@ router.post("/mens",async(req,res)=>{
     }
 })
 
+router.get("/mens",async(req,res)=>{
 
+})
 
 module.exports = router
