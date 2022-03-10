@@ -60,6 +60,15 @@ try{
 
 router.patch("/mens/:id",async(req,res)=>{
 
+        try{
+            const newMan = await MensRanking.findByIdAndUpdate({"_id":req.params.id},req.body,{new:true});
+            if(!newMan)
+                res.status(400).send("Invalid Id");
+            else
+                res.status(201).send(newMan);
+        }catch(err){
+            res.status(400).send(err);
+        }
 })
 
 module.exports = router
