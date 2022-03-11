@@ -19,7 +19,7 @@ app.set("views",template_path)
 app.use(express.static(static_path))
 // setting views engine
 app.set("view engine","hbs")
-// Register partials with hbs
+// Register partials with hbs , to dynamically run server with saved changes add in dev script in package.json for extension to hbs
 hbs.registerPartials(partials_path)
 //  `/`hi is the root and req and res are objects 
 app.get("/hi",async(req,res)=>{
