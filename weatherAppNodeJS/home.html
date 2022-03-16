@@ -9,14 +9,35 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Georama", sans-serif;
+            /* font-family: "Georama", sans-serif; */
+            }
+
+            html{
+                background: #fff;
+            }
+
+            .box{
+                width : 20vw;
+                height: 60vh;
+                background: #acd2fb;
             }
 
             body {
             height: 100vh;
             display: grid;
             place-items: center;
-            background: #acd2fb;
+            background: #fff;
+            position: relative;
+            overflow: hidden;
+            transform: translate3d(0,0,0);
+            min-width: 20rem;
+            min-height: 35rem;
+
+            }
+
+            .wave{
+                position: absolute;
+                opacity: 0.3;
             }
 
             a {
