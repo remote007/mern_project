@@ -22,14 +22,13 @@ const server = http.createServer((req,res)=>{
         const objdata = JSON.parse(chunk);
         const arr = [objdata];
         // console.log(arr[0].main.temp);
-        const realTimeData = arrData.map((val)=>{
-            replaceVal(homeFile,val);
-        })
+        const realTimeData = arr.map((val)=>replaceVal(homeFile,val))
+        res.write(realTimeData);
       })
       .on('end', function (err) {
         if (err) return console.log('connection closed due to errors', err);
-       
-        console.log('end');
+               console.log('end');
+               res.end();
       });
     }
 });
