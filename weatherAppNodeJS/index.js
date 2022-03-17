@@ -6,7 +6,14 @@ const server = http.createServer((req,res)=>{
     // req is request from internal server;
     if(req.url=="/"){
         //installed with npm and now require it , requests is used to send it from the application
-       requests("api.openweathermap.org/data/2.5/weather?q=Pune&appid=95444cb615c878ae792a1033de5525b9");
-       
+       requests("api.openweathermap.org/data/2.5/weather?q=Pune&appid=95444cb615c878ae792a1033de5525b9")
+       .on(data,(chunk)=>{
+            console.log()
+       })
+       .on("end",(err)=>{
+        if(err){
+            console.log(err);
+        }
+        })
     }
 });
