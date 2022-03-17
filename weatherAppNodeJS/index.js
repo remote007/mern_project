@@ -1,3 +1,3 @@
 const http = require("http");
 const fs = require("fs");
-const 
+const homeFile = fs.writeFileSync("home.html" ,"utf-8");
