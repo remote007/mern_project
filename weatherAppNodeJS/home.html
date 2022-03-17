@@ -88,8 +88,8 @@
     const getCurrentTime = ()=>{
         var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
         let currentDay = new Date();
-        var day = currentDay.getDay();
-        var month = currentDay.getMonth()+1;
+        var day = currentDay.getDate();
+        var month = currentDay.getMonth();
         var year = currentDay.getFullYear();
         alert(day+"-"+months[month]+"-"+year);
 
