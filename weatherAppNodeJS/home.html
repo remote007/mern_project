@@ -100,7 +100,8 @@
         if(min<10){
             min = "0"+min;
         }
-        return day+"-"+months[month]+"-"+year+" | "+hr+":"+min+" "+period;
+        // return day+"-"+months[month]+"-"+year+" | "+hr+":"+min+" "+period;
+        return `${day}-${months[month]}-${year} | ${hr}:${min} ${period}`;
     }
     curDate.innerHTML = getCurrentTime();
 </script>
