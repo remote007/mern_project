@@ -17,3 +17,6 @@ const server = http.createServer((req,res)=>{
         })
     }
 });
+
+//after creating server you must listen to it for mode to work , inde is also js file like app
+server.listen(8000,"127.0.0.1"); 
