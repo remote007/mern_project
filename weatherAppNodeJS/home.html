@@ -97,6 +97,9 @@
         if(hr=>12){
             period = "PM";
         }
+        if(min<10){
+            min = "0"+min;
+        }
     }
     getCurrentTime();
 </script>
