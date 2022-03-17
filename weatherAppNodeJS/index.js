@@ -4,8 +4,14 @@ const fs = require("fs");
 const requests = require("requests");
 const homeFile = fs.readFileSync("home.html" ,"utf-8");
 
-const replaceVal = (homeFile,val) =>{
-    
+const replaceVal = (tempVal,originalVal) =>{
+
+    let temperature = tempVal.replace("{%tempval%}",originalVal.main.temp);
+    temperature = tempVal.replace("{%tempmin%}",originalVal.main.temp_min);
+    temperature = tempVal.replace("{%tempmax%}",originalVal.main.temp_max);
+    temperature = tempVal.replace("{%location%}",originalVal.name);
+    temperature = tempVal.replace("{%country%}",originalVal.sys.country);
+
 }
 const server = http.createServer((req,res)=>{
     // req is request from internal server;
