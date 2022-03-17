@@ -82,11 +82,18 @@
     const getCurrentDay = ()=>{
         const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         const d = new Date();
-        let currentTime = days[d.getDay()];
+        let currentDay = days[d.getDay()];
  
     }
     const getCurrentTime = ()=>{
-        
+        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+        let currentDay = new Date();
+        var day = currentDay.getDay();
+        var month = currentDay.getMonth()+1;
+        var year = currentDay.getFullYear();
+        alert(day+"-"+months[month]+"-"+year);
+
     }
+    getCurrentTime();
 </script>
 </html>
