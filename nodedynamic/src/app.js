@@ -12,7 +12,7 @@ app.use(express.static(static_path))
 app.set("views engine","hbs")
 
 app.get("/",(req,res)=>{
-    res.send("Hi")
+    // res.send("Hi")
 })
 
 app.listen(port, ()=>{
