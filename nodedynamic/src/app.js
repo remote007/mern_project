@@ -9,7 +9,7 @@ app.use("/css",express.static(path.join(__dirname,"../node_modules/bootstrap/dis
 app.use("/jq",express.static(path.join(__dirname,"../node_modules/jquery/dist")))
 app.use("/js",express.static(path.join(__dirname,"../node_modules/bootstrap/dist/js")))
 app.use(express.static(static_path))
-app.set("views engine","hbs")
+app.set("view engine","hbs")
 
 app.get("/",(req,res)=>{
     // res.send("Hi")
