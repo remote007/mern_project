@@ -5,6 +5,9 @@ const path = require("path");
 require("./db/conn")
 
 const static_path = path.join(__dirname,"../public");
+app.use("/css",express.static(path.join(__dirname,"../node_modules/bootstrap/dist/css/bootstrap-grid.min.css")))
+app.use(express.static(static_path))
+app.use(express.static(static_path))
 app.use(express.static(static_path))
 
 app.get("/",(req,res)=>{
