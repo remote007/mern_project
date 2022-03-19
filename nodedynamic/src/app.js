@@ -15,6 +15,11 @@ app.get("/",(req,res)=>{
     res.render("index");
 })
 
+app.get("/contact",(req,res)=>{
+   
+    res.render("contact");
+})
+
 app.listen(port, ()=>{
     console.log(`Server Connected Successfully at ${port}`);
 })
